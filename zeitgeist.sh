@@ -17,12 +17,12 @@ if [ ${w} -gt 52 ]; then
 	Y=$[$Y + 1]
 fi
 
-echo 'Zeitgeist v1.9';
+echo 'Zeitgeist v1.9.1';
 echo 'by Console++ / frame@console.cc';
 echo 
 
 echo Logging in ...
-wget -q --cookies=on --keep-session-cookies --save-cookies=${targetdir}cookie.txt --post-data="name=${username}&pass=${password}&form_id=user_login_block" -O /dev/null https://premium.zeit.de/abo/zeit_digital
+wget -q --cookies=on --keep-session-cookies --save-cookies=${targetdir}cookie.txt --post-data="entry_service=premium&product_id=sonstige&return_url=https://premium.zeit.de/aktion/das-digitale-abo-der-zeit&name=${username}&pass=${password}" -O /dev/null https://meine.zeit.de/anmelden
 
 echo Fetching Audio_${y}${w}.zip ...
 wget -q --cookies=on --keep-session-cookies --load-cookies=${targetdir}cookie.txt -O ${targetdir}Audio_${y}${w}.zip "https://premium.zeit.de/system/files/audio/DZ/${Y}/Audiofiles_DIE_ZEIT_${w}.zip"
